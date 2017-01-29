@@ -6,7 +6,7 @@ export function connect(container, stateMap = state => state) {
             return stateMap(container.getInitialState());
         },
 
-        componentDidMount: function() {
+        componentWillMount: function() {
             this.subscriber = container
                 .getObservable()
                 .map(stateMap)
